@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap');
+
+* {
+    font-family: 'Open Sans' sans-serif;
+}
+
+body {
+    background-color: rgb(109, 109, 109);
+}
+
+section {
+    background: rgb(223, 236, 223);
+    border-radius: 10px;
+    padding: 10px;
+    width: 350px;
+    margin: auto;
+    margin-top: 70px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.39);
+}
+
+.tudo {
+    width: auto;
+    margin: auto;
+    text-align: center;
+}
+
+.checker {
+    width: 268px;
+    margin: auto;
+    visibility: hidden;
+}
+
+#adic {
+    padding: 3px;
+    width: 75px;
+    box-shadow: 0.5px 0.5px 0.5px rgb(192, 189, 189);
+    border-radius: 4px;
+}
+
+#txts {
+    width: 180px;
+    padding: 4px;
+    border-radius: 4px;
+}
