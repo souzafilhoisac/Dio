@@ -1,7 +1,13 @@
-let texto = document.getElementById('txts')
-let res = document.getElementById('res')
+const texto = document.getElementById('txts')
+const res = document.getElementById('res')
+
 
 function adicionar() {
-    if(texto.value === undefined || texto.value === '' || texto.value === null)
-        res.innerHTML = `Please, type some task`
+    if(!String(texto.value) || Number(texto.value)) {
+        alert(`Please, type some task`)
+    } else {
+        let lista = document.createElement('option')
+        lista.text = String(texto.value)
+        res.appendChild(lista)
+    }
 }

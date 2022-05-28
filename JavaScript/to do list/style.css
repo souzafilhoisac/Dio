@@ -18,16 +18,19 @@ section {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.39);
 }
 
-.tudo {
+h1 {
+    text-align: center;
+}
+
+.tasks {
     width: auto;
     margin: auto;
     text-align: center;
 }
 
-.checker {
+.res {
     width: 268px;
     margin: auto;
-    visibility: hidden;
 }
 
 #adic {
