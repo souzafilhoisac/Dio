@@ -21,6 +21,12 @@ soma.apply(MYOBJ, [3, 5])
 
 */
 
+function calculaIdade(anos) {
+	return `Daqui a ${anos} anos, ${this.nome} terá ${
+		this.idade + anos
+	} anos de idade.`;
+}
+
 const PESSOAS = {
     nome: 'FULANO',
     idade: 23,
@@ -31,11 +37,6 @@ const ANIMAIS = {
     idade: 3,
 };
 
-function calculaIdade(anos) {
-	return `Daqui a ${anos} anos, ${this.nome} terá ${
-		this.idade + anos
-	} anos de idade.`;
-}
 
 console.log(calculaIdade.apply(PESSOAS, [7]))
 console.log(calculaIdade.call(ANIMAIS, 7))
