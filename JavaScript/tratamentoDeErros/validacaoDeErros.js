@@ -1,7 +1,7 @@
-function verificarTamanhoDeArray(array,tamanho){
-    const MEU_ERRO_REF = new ReferenceError('[Preencha todos os parâmetros.');
+function verificarTamanhoDeArray(array, tamanho){
+    const MEU_ERRO_REF = new ReferenceError('Preencha todos os parâmetros.');
     MEU_ERRO_REF.name = 'InvalidReference';
-   
+
     const MEU_ERRO_TYPE1 = new TypeError('Esse array não é do tipo objeto.');
     MEU_ERRO_TYPE1.name = 'InvalidType';
     
@@ -13,16 +13,23 @@ function verificarTamanhoDeArray(array,tamanho){
 
     try {
         if(!array || !tamanho){
-            throw `${MEU_ERRO_REF.name} : ${MEU_ERRO_REF}`;
-        } else if(typeof array !== 'object'){
-            throw `${MEU_ERRO_TYPE1.name} : ${MEU_ERRO_TYPE1}`;
-        } else if(typeof tamanho !== 'number'){
-            throw `${MEU_ERRO_TYPE2.name} : ${MEU_ERRO_TYPE2}`;
-        } else if(array.length !== tamanho){
-            throw `${MEU_ERRO_RANGE.name} : ${MEU_ERRO_RANGE}`;
-        } else{
-            return array;
+            throw MEU_ERRO_REF;
+        } 
+        
+        if(typeof array !== 'object'){
+            throw MEU_ERRO_TYPE1;
         }
+        
+        if(typeof tamanho !== 'number'){
+            throw MEU_ERRO_TYPE2;
+        }
+        
+        if(array.length !== tamanho){
+            throw MEU_ERRO_RANGE;
+        } 
+        
+        return array;
+        
     } catch (e) {
         if(e instanceof ReferenceError){
             console.log(MEU_ERRO_REF.name)
@@ -38,5 +45,5 @@ function verificarTamanhoDeArray(array,tamanho){
         }
     }
 }
-
-console.log(verificarTamanhoDeArray())
+let nome;
+console.log(verificarTamanhoDeArray([2, 3, 4], 3))
