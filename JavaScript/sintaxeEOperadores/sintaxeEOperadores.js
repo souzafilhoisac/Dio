@@ -11,4 +11,4 @@ function numeros(num1,num2) {
     
 }
 
-numeros(16)
+console.log(numeros(11,7))
