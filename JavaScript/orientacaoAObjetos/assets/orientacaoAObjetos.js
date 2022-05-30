@@ -11,12 +11,13 @@ Crie uma classe-filha chamada ContaUniversitaria que herda todos os parâmetros 
 Faça com que o método saque de ContaUniversitaria apenas seja capaz de sacar valores menores que 500 reais.*/
 
 class ContaBancaria {
-    constructor(agencia, numero, tipo, saldo){
+    constructor(agencia, numero, tipo){
     this.agencia = agencia;
-    this.agencia = numero;
-    this.agencia = tipo;
-    this.agencia = saldo;
+    this.numero = numero;
+    this.tipo = tipo;
+    this._saldo = 0;
     }
+//sempre usar o underline '_' quando for utilizar o getter e o setter
     get saldo(){
         return this._saldo;
     }
@@ -25,18 +26,27 @@ class ContaBancaria {
         this._saldo = val;
     }
 
-    sacar(){
-
+    sacar(val){
+        if(val > this._saldo){
+            return `Saldo insuficiente`;
+        }
+        console.log('Realizando saque...');
+        this._saldo -= val;
+        return `Seu saldo agora é de ${this._saldo}.`;
     }
-    depositar(){
 
+    depositar(val){
+        console.log('Realizando depósito...');
+        this._saldo += val;
+        return `Seu saldo agora é de ${this._saldo}.`;
     }
 }
 
 class ContaCorrente extends ContaBancaria {
-    constructor(type = 'conta corrente', cartaoCredito){
-        this.type = type;
-        super('ContaCorrente');
+    constructor(agencia, numero, cartaoCredito){
+        super(agencia, numero);
+        this.tipo = 'corrente';
+        this._cartaoCredito = cartaoCredito;
     }
     
     get cartaoCredito(){
@@ -50,19 +60,24 @@ class ContaCorrente extends ContaBancaria {
 }
 
 class ContaPoupanca extends ContaBancaria {
-    constructor(){
-        super('ContaPoupanca');
+    constructor(agencia, numero){
+        super(agencia, numero);
+        this.tipo = 'poupança';
     }
 }
 
 class ContaUniversitaria extends ContaBancaria {
-    constructor(){
-        super('ContaUniversitaria');
-    }
+        constructor(agencia, numero){
+            super(agencia, numero);
+            this.tipo = 'universitária';
+        }
 
     sacar(val){
-        if(val < 500){
-            return `Saque realizado com sucesso.`
+        if(val > 500){
+            return `Valor excede o limite diário.`
         }
+        console.log('Realizando saque...');
+        this._saldo -= val;
+        return `Seu saldo agora é de ${this._saldo}.`;
     }
 }
