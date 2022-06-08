@@ -1,10 +1,10 @@
 # Jogo da velha
 ## Integrantes
 ### SAVIO NASCIMENTO
-### NOME COMPLETO
+### ISAC SOUZA FILHO
 
 | -  |  A     | B     | C     |
 | -- | :---:  | :---: | :---: |
-| 1  | 0      | W     | W     |
-| 2  | W      | W     | W     |
-| 3  | W      | W     | W     |
+| 1  | 0      | W     | 1    |
+| 2  | W      | 0     | W     |
+| 3  | W      | W     | 1     |
